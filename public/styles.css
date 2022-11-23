@@ -37,6 +37,7 @@ body > * {
 h1,
 h2 {
   font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
 }
 p {
   text-align: justify;
@@ -48,26 +49,26 @@ header * {
   font-size: 2em;
 }
 
-#link {
+.link {
   color: #000;
   text-decoration: none;
   box-shadow: 0 0.15em #623cea;
   transition: all 0.2s ease-out;
   animation: 2s ease-in 1s infinite alternate glow;
 }
-#link:focus {
+.link:focus {
   color: #190953bf;
   box-shadow: 0 0.175em #623cea;
   text-shadow: 0 0 0.175em #623cea80;
   animation: none;
 }
-#link:hover {
+.link:hover {
   color: #190953bf;
   box-shadow: 0 0.225em #623cea;
   text-shadow: 0 0 0.225em #623cea80;
   animation: none;
 }
-#link:active {
+.link:active {
   color: #16084966;
   box-shadow: 0 0.05em #a690f3;
   text-shadow: 0 0 0.05em #a690f380;
