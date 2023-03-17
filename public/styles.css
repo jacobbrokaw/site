@@ -1,137 +1,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Mono:wght@300&display=swap');
 html,
 body {
-  margin: 0;
-  background-color: #fff;
+	--bkg-color: #fff;
+	--text-color: #000;
+	--text-color-muted: hsla(0, 0%, 0%, 0.75);
+	--text-glow-color-look: hsla(253, 80%, 18%, 0.75);
+	--text-glow-color-press: hsla(253, 80%, 16%, 0.4);
+
+	margin: 0;
+	background-color: var(--bkg-color);
 }
+@media (prefers-color-scheme: dark) {
+	html,
+	body {
+		--bkg-color: #000;
+		--text-color: #bbb;
+		--text-color-muted: hsla(0, 0%, 73%, 75%);
+		--text-glow-color-look: hsla(253, 80%, 73%, 0.75);
+		--text-glow-color-press: hsla(253, 80%, 70%, 0.4);
+	}
+
+	.logo {
+		filter: grayscale(100%) drop-shadow(0 0 1px var(--text-color));
+	}
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 28px;
-  letter-spacing: 0.05em;
-  word-spacing: 0.125em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 28px;
+	letter-spacing: 0.05em;
+	word-spacing: 0.125em;
+	color: var(--text-color);
 }
 body > * {
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-right: auto;
-  margin-left: auto;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-right: auto;
+	margin-left: auto;
 }
 @media (min-width: 768px) {
-  body > * {
-    width: 750px;
-  }
+	body > * {
+		width: 750px;
+	}
 }
 @media (min-width: 992px) {
-  body > * {
-    width: 970px;
-  }
+	body > * {
+		width: 970px;
+	}
 }
 @media (min-width: 1200px) {
-  body > * {
-    width: 1170px;
-  }
+	body > * {
+		width: 1170px;
+	}
 }
 h1,
 h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 300;
 }
 p {
-  text-align: justify;
+	text-align: justify;
 }
 header {
-  margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 header * {
-  font-size: 2em;
+	font-size: 2em;
 }
 
 .link {
-  color: #000;
-  text-decoration: none;
-  box-shadow: 0 0.15em #623cea;
-  transition: all 0.2s ease-out;
-  animation: 2s ease-in 1s infinite alternate glow;
+	color: var(--text-color);
+	text-decoration: none;
+	box-shadow: 0 0.15em #623cea;
+	transition: all 0.2s ease-out;
+	animation: 2s ease-in 1s infinite alternate glow;
 }
 .link:focus {
-  color: #190953bf;
-  box-shadow: 0 0.175em #623cea;
-  text-shadow: 0 0 0.175em #623cea80;
-  animation: none;
+	color: var(--text-glow-color-look);
+	box-shadow: 0 0.175em #623cea;
+	text-shadow: 0 0 0.175em #623cea80;
+	animation: none;
 }
 .link:hover {
-  color: #190953bf;
-  box-shadow: 0 0.225em #623cea;
-  text-shadow: 0 0 0.225em #623cea80;
-  animation: none;
+	color: var(--text-glow-color-look);
+	box-shadow: 0 0.225em #623cea;
+	text-shadow: 0 0 0.225em #623cea80;
+	animation: none;
 }
 .link:active {
-  color: #16084966;
-  box-shadow: 0 0.05em #a690f3;
-  text-shadow: 0 0 0.05em #a690f380;
-  animation: none;
+	color: var(--text-glow-color-press);
+	box-shadow: 0 0.05em #a690f3;
+	text-shadow: 0 0 0.05em #a690f380;
+	animation: none;
 }
 
 .muted {
-  color: rgba(0, 0, 0, 0.75);
+	color: var(--text-color-muted);
 }
 
 .logo {
-  width: 36px;
-  height: auto;
-  filter: grayscale(100%);
-  transform: none;
-  transition: all 0.2s ease-out;
+	filter: grayscale(100%);
+	transform: none;
+	transition: all 0.2s ease-out;
 }
 .logo:focus {
-  transform: translateY(-0.175em);
-  opacity: 75%;
+	transform: translateY(-0.175em);
+	opacity: 75%;
 }
 .logo:hover {
-  transform: translateY(-0.225em);
-  opacity: 75%;
+	transform: translateY(-0.225em);
+	opacity: 75%;
 }
 .logo:active {
-  transform: translateY(-0.05em);
-  opacity: 40%;
+	transform: translateY(-0.05em);
+	opacity: 40%;
 }
 .logo:not(:last-of-type) {
-  margin-right: 15px;
+	margin-right: 15px;
 }
 
 img {
-  background: transparent;
+	background: transparent;
 }
 
 @media (max-width: 768px) {
-  body {
-    font-size: 24px;
-  }
-  p {
-    text-align: left;
-  }
+	body {
+		font-size: 24px;
+	}
+	p {
+		text-align: left;
+	}
 }
 
 @-webkit-keyframes glow {
-  from {
-    color: #000;
-    text-shadow: none;
-  }
-  to {
-    color: #190953bf;
-    text-shadow: 0 0 0.175em #623cea80;
-  }
+	from {
+		color: var(--text-color);
+		text-shadow: none;
+	}
+	to {
+		color: var(--text-glow-color-look);
+		text-shadow: 0 0 0.175em #623cea80;
+	}
 }
 @keyframes glow {
-  from {
-    color: #000;
-    text-shadow: none;
-  }
-  to {
-    color: #190953bf;
-    text-shadow: 0 0 0.175em #623cea80;
-  }
+	from {
+		color: var(--text-color);
+		text-shadow: none;
+	}
+	to {
+		color: var(--text-glow-color-look);
+		text-shadow: 0 0 0.175em #623cea80;
+	}
 }
