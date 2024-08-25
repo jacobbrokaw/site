@@ -56,10 +56,15 @@ body > * {
 		width: 1170px;
 	}
 }
-h1,
-h2 {
+
+h1 {
 	font-family: 'Roboto Mono', monospace;
 	font-weight: 300;
+}
+.my-name {
+	display: block;
+	margin-top: 1em;
+	color: var(--text-color-muted);
 }
 p {
 	text-align: justify;
@@ -67,16 +72,13 @@ p {
 header {
 	margin-bottom: 2em;
 }
-header * {
-	font-size: 2em;
-}
 
 .link {
 	color: var(--text-color);
 	text-decoration: none;
-	box-shadow: 0 0.15em #623cea;
+	box-shadow: 0 0.125em #623cea;
 	transition: all 0.2s ease-out;
-	animation: 2s ease-in 1s infinite alternate glow;
+	animation: 3s ease-in-out 1s infinite alternate glow;
 }
 .link:focus {
 	color: var(--text-glow-color-look);
@@ -95,10 +97,6 @@ header * {
 	box-shadow: 0 0.05em #a690f3;
 	text-shadow: 0 0 0.05em #a690f380;
 	animation: none;
-}
-
-.muted {
-	color: var(--text-color-muted);
 }
 
 .logo {
