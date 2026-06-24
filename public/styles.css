@@ -77,8 +77,11 @@ header {
 	color: var(--text-color);
 	text-decoration: none;
 	box-shadow: 0 0.125em #623cea;
-	transition: all 0.2s ease-out;
+  transition-property: box-shadow, text-shadow, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 	animation: 3s ease-in-out 1s infinite alternate glow;
+  white-space: nowrap;
 }
 .link:focus {
 	color: var(--text-glow-color-look);
