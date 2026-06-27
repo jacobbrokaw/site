@@ -3,9 +3,10 @@ html,
 body {
 	--bkg-color: #fff;
 	--text-color: #000;
-	--text-color-muted: hsla(0, 0%, 0%, 0.75);
-	--text-glow-color-look: hsla(253, 80%, 18%, 0.75);
-	--text-glow-color-press: hsla(253, 80%, 16%, 0.4);
+	--text-color-muted: hsla(0deg 0% 0% / 75%);
+	--text-glow-color-look: hsla(24deg 95% 18% / 75%);
+	--text-glow-color-press: hsla(24deg 95% 16% / 40%);
+  --underline-scale: 1;
 
 	margin: 0;
 	background-color: var(--bkg-color);
@@ -15,9 +16,10 @@ body {
 	body {
 		--bkg-color: #000;
 		--text-color: #bbb;
-		--text-color-muted: hsla(0, 0%, 73%, 75%);
-		--text-glow-color-look: hsla(253, 80%, 73%, 0.75);
-		--text-glow-color-press: hsla(253, 80%, 70%, 0.4);
+		--text-color-muted: hsla(0deg 0% 73% / 75%);
+		--text-glow-color-look: hsla(24deg 95% 73% / 75%);
+		--text-glow-color-press: hsla(24deg 95% 70% / 40%);
+    --underline-scale: 0.5; 
 	}
 
 	.logo {
@@ -30,7 +32,7 @@ body {
 	font-weight: 300;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	font-size: 28px;
+	font-size: 16pt;
 	letter-spacing: 0.05em;
 	word-spacing: 0.125em;
 	color: var(--text-color);
@@ -46,16 +48,6 @@ body > * {
 		width: 750px;
 	}
 }
-@media (min-width: 992px) {
-	body > * {
-		width: 970px;
-	}
-}
-@media (min-width: 1200px) {
-	body > * {
-		width: 1170px;
-	}
-}
 
 h1 {
 	font-family: 'Roboto Mono', monospace;
@@ -67,7 +59,7 @@ h1 {
 	color: var(--text-color-muted);
 }
 p {
-	text-align: justify;
+	text-align: left;
 }
 header {
 	margin-bottom: 2em;
@@ -76,7 +68,7 @@ header {
 .link {
 	color: var(--text-color);
 	text-decoration: none;
-	box-shadow: 0 0.125em #623cea;
+	box-shadow: 0 calc(0.1em * var(--underline-scale)) #fa8231;
   transition-property: box-shadow, text-shadow, color;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -85,20 +77,20 @@ header {
 }
 .link:focus {
 	color: var(--text-glow-color-look);
-	box-shadow: 0 0.175em #623cea;
-	text-shadow: 0 0 0.175em #623cea80;
+	box-shadow: 0 calc(0.15em * var(--underline-scale)) #fa8231;
+	text-shadow: 0 0 0.175em #fa823180;
 	animation: none;
 }
 .link:hover {
 	color: var(--text-glow-color-look);
-	box-shadow: 0 0.225em #623cea;
-	text-shadow: 0 0 0.225em #623cea80;
+	box-shadow: 0 calc(0.2em * var(--underline-scale)) #fa8231;
+	text-shadow: 0 0 0.225em #fa823180;
 	animation: none;
 }
 .link:active {
 	color: var(--text-glow-color-press);
-	box-shadow: 0 0.05em #a690f3;
-	text-shadow: 0 0 0.05em #a690f380;
+	box-shadow: 0 calc(0.05em * var(--underline-scale)) #fd9644;
+	text-shadow: 0 0 0.05em #fd964480;
 	animation: none;
 }
 
@@ -143,7 +135,7 @@ img {
 	}
 	to {
 		color: var(--text-glow-color-look);
-		text-shadow: 0 0 0.175em #623cea80;
+		text-shadow: 0 0 0.175em #fa823180;
 	}
 }
 @keyframes glow {
@@ -153,6 +145,6 @@ img {
 	}
 	to {
 		color: var(--text-glow-color-look);
-		text-shadow: 0 0 0.175em #623cea80;
+		text-shadow: 0 0 0.175em #fa823180;
 	}
 }
