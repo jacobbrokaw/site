@@ -70,6 +70,10 @@ nav a.selected, nav a:hover, nav a:focus {
   box-shadow: none;
 }
 
+.now-items > li + li {
+	margin-top: 0.75em;
+}
+
 h1 {
 	font-family: 'Roboto Mono', monospace;
 	font-weight: 300;
