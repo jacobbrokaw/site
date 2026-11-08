@@ -49,11 +49,32 @@ body > * {
 	}
 }
 
+nav > ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  animation: none;
+  padding: 0.125em;
+}
+
+nav a.selected, nav a:hover, nav a:focus {
+  background-color: var(--text-color);
+  color: var(--bkg-color);
+  box-shadow: none;
+}
+
 h1 {
 	font-family: 'Roboto Mono', monospace;
 	font-weight: 300;
 }
-.my-name {
+.my-name, .updated-date {
 	display: block;
 	margin-top: 1em;
 	color: var(--text-color-muted);
@@ -75,6 +96,8 @@ header {
 	animation: 3s ease-in-out 1s infinite alternate glow;
   white-space: nowrap;
 }
+
+
 .link:focus {
 	color: var(--text-glow-color-look);
 	box-shadow: 0 calc(0.15em * var(--underline-scale)) #fa8231;
